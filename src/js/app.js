@@ -61,11 +61,12 @@ App = {
     content.hide();
 
     // Load account data
-    web3.eth.getCoinbase(function(err, account) {
-      if (err === null) {
-        App.account = account;
+    //web3.eth.getCoinbase(function(err, account) {
+    web3.eth.getAccounts(function(err,account){    
+      //if (err === null) {
+        //App.account = account;
         $("#accountAddress").html("Your Account: " + account);
-      }
+      //}
     });
 
     // Load contract data
